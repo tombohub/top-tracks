@@ -7,11 +7,19 @@ function NavBar(props) {
   const artists = "/artists";
 
   return (
-    <nav>
-      <Link to={tracks}>Tracks</Link>
-      <Link to={artists}>Artists</Link>
+    <React.Fragment>
+      <nav className="border-b flex justify-center">
+        <ul>
+          <li>
+            <Link to={tracks}>Tracks</Link>
+          </li>
+          <li>
+            <Link to={artists}>Artists</Link>
+          </li>
+        </ul>
+      </nav>
       <Routes tracks={tracks} artists={artists} />
-    </nav>
+    </React.Fragment>
   );
 }
 
