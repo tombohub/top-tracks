@@ -5,29 +5,49 @@ import { countries } from "./countries";
  * Input field to choose the country
  */
 function CountryInput() {
+  /* -------------------------------------------------------------------------- */
+  /*                                   States                                   */
+  /* -------------------------------------------------------------------------- */
   const [value, setValue] = useState("");
   const [countrySuggestions, setCountrySuggestions] = useState([]);
 
+  /* -------------------------------------------------------------------------- */
+  /*                                  Functions                                 */
+  /* -------------------------------------------------------------------------- */
   /**
    * Filters Countries based on typing in input element and sets the countries suggestions
    * @param {event} event input event onChange
    */
   function filterCountries(event) {
     const subString = event.target.value;
-    const regex = new RegExp(`^${subString}`, "i");
-    const suggestions = countries.filter((country) => regex.test(country));
 
-    console.log(suggestions);
-    setCountrySuggestions(suggestions);
+    if (subString !== "") {
+      const regex = new RegExp(`^${subString}`, "i");
+      const suggestions = countries.filter((country) => regex.test(country));
+      setCountrySuggestions(suggestions);
+    } else {
+      setCountrySuggestions([]);
+    }
   }
 
+  /**
+   * Renders the current country suggestions list
+   */
   function renderSuggestions() {
-    const list = countrySuggestions.map((country) => {
-      return <div>dd</div>;
-    });
-    return list;
+    return (
+      <ul className="list-group">
+        {countrySuggestions.map((country, i) => (
+          <li key={i} className="list-group-item">
+            {country}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
+  /* -------------------------------------------------------------------------- */
+  /*                                   Return                                   */
+  /* -------------------------------------------------------------------------- */
   return (
     <div className="w-50 mx-auto mt-5 text-center">
       <p className="lead">Choose Country:</p>
@@ -44,5 +64,9 @@ function CountryInput() {
     </div>
   );
 }
+
+/* -------------------------------------------------------------------------- */
+/*                                   Export                                   */
+/* -------------------------------------------------------------------------- */
 
 export default CountryInput;
