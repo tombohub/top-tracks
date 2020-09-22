@@ -3,6 +3,10 @@ import { Switch, Route } from "react-router-dom";
 import Artist from "./Artist";
 import Track from "./Track";
 
+/**
+ * Collection of routes
+ * @param {props} props
+ */
 function Routes(props) {
   return (
     <Switch>

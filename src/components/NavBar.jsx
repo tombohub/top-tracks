@@ -3,8 +3,12 @@ import { Link } from "react-router-dom";
 import Routes from "./Routers";
 
 function NavBar(props) {
+  /* --------------------------------- Routes --------------------------------- */
+
   const tracks = "/tracks";
   const artists = "/artists";
+
+  /* --------------------------------- Render --------------------------------- */
 
   return (
     <React.Fragment>
