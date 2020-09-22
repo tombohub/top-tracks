@@ -9,13 +9,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
-    "tailwindcss": "^1.8.10"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
-    "build:tailwind": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
-    "prestart": "npm run build:tailwind",
-    "prebuild": "npm run build:tailwind",
     "start": "PORT=3005 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
