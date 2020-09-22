@@ -5,7 +5,7 @@ import Track from "./Track";
 
 /**
  * Collection of routes
- * @param {props} props
+ * @param {props} props for passing routes
  */
 function Routes(props) {
   return (

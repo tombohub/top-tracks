@@ -5,7 +5,7 @@ import React from "react";
  * @param {*} props
  */
 function Artist(props) {
-  return process.env.REACT_APP_API_KEY;
+  return "artist";
 }
 
 export default Artist;
