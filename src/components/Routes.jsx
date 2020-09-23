@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Artist from "./Artist";
-import Track from "./Track";
+import TrackList from "./TrackList";
+import ArtistList from "./ArtistList";
 
 /**
  * Collection of routes
@@ -11,10 +11,10 @@ function Routes(props) {
   return (
     <Switch>
       <Route path={props.tracks}>
-        <Track />
+        <TrackList country={props.country} />
       </Route>
       <Route path={props.artists}>
-        <Artist />
+        <ArtistList country={props.country} />
       </Route>
     </Switch>
   );

@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <NavBar tracks={tracks} artists={artists} />
-      <CountryInput />
       <Main tracks={tracks} artists={artists} />
     </>
   );

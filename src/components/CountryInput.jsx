@@ -4,9 +4,9 @@ import { countries } from "./countries";
 /**
  * Input field to choose the country
  */
-function CountryInput() {
-  const [inputValue, setInputValue] = useState("");
+function CountryInput(props) {
   const [countrySuggestions, setCountrySuggestions] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
   /* -------------------------------- Functions ------------------------------- */
   /**
@@ -27,38 +27,50 @@ function CountryInput() {
   }
 
   /**
-   * Selects the country as input value if user clicks on it in suggestions
-   * @param {String} country clicked on country
-   */
-  function selectCountry(country) {
-    setInputValue(country);
-    setCountrySuggestions([]);
-  }
-
-  /**
    * Renders the current country suggestions list
    */
   function renderSuggestions() {
     return (
       <ul className="list-group">
         {countrySuggestions.map((country, i) => (
-          <li
+          <button
+            type="submit"
             key={i}
-            className="list-group-item"
-            onClick={() => selectCountry(country)}
+            className="btn btn-secondary"
+            onClick={(e) => handleSubmit(e, country)}
           >
             {country}
-          </li>
+          </button>
         ))}
       </ul>
     );
   }
 
+  /**
+   * Submits the form, clears the input field and lifts the country to parent Component (Main)
+   * @param {event} e submit form event
+   */
+  function handleSubmit(e, country) {
+    e.preventDefault();
+
+    if (countries.includes(country)) {
+      setInputValue("");
+      setCountrySuggestions([]);
+      props.onSubmit(country);
+    } else {
+      alert(`No ${country}  country yet!`);
+    }
+  }
+
   /* --------------------------------- Return --------------------------------- */
   return (
-    <div className="w-50 mx-auto mt-5 text-center">
+    <>
       <p className="lead">Choose Country:</p>
-      <form action="" autoComplete="off">
+      <form
+        action=""
+        onSubmit={(e) => handleSubmit(e, inputValue)}
+        autoComplete="off"
+      >
         <input
           onChange={filterCountries}
           value={inputValue}
@@ -67,9 +79,9 @@ function CountryInput() {
           placeholder="Country"
           className="form-control"
         />
+        <div>{renderSuggestions()}</div>
       </form>
-      <div>{renderSuggestions()}</div>
-    </div>
+    </>
   );
 }
 
