@@ -10,7 +10,7 @@ function Main(props) {
   const [country, setCountry] = useState("");
 
   return (
-    <div className="w-50 mx-auto mt-5 text-center">
+    <div className="w-50 mx-auto mt-3 text-center">
       <CountryInput onSubmit={(v) => setCountry(v)} />
       <Routes tracks={props.tracks} artists={props.artists} country={country} />
     </div>

@@ -65,7 +65,7 @@ function CountryInput(props) {
   /* --------------------------------- Return --------------------------------- */
   return (
     <>
-      <p className="lead">Choose Country:</p>
+      <p className="lead">List most popular:</p>
       <form
         action=""
         onSubmit={(e) => handleSubmit(e, inputValue)}
