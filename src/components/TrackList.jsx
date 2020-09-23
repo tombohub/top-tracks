@@ -7,23 +7,14 @@ import React, { useEffect, useState } from "react";
 function TrackList({ country }) {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const API_ROOT = process.env.REACT_APP_API_ROOT;
-  const [test, setTest] = useState("");
-
-  const tracks = {
-    momo: "makaroni",
-    tito: "babaroni",
-    country: country,
-  };
 
   useEffect(() => {
-    function fetchTracks() {
-      alert("heloo");
-    }
+    function fetchTracks() {}
 
     fetchTracks();
   }, [country]);
 
-  return <div>{test}</div>;
+  return <div>{country}</div>;
 }
 
 export default TrackList;
