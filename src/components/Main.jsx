@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, {
+  useState,
+  useRef,
+  useContext,
+  useEffect,
+} from "react";
 import Routes from "./Routes";
 import CountryInput from "./CountryInput";
-import { Provider } from "../Context";
+import { Provider, Context } from "../Context";
+import fetch from "./fetch";
 
 /**
  *Component which holds the input field and list (tracks or artists)
@@ -9,19 +15,26 @@ import { Provider } from "../Context";
  */
 function Main(props) {
   const [country, setCountry] = useState("");
+  const countryRef = useRef(country);
+  const context = useContext(Context);
+
+  console.log("conteeeeeeext:", context);
+
+  useEffect(() => {
+    fetch(country, countryRef.current, context);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [country]);
 
   return (
     <>
-      <Provider>
-        <div className="w-50 mx-auto mt-3 text-center">
-          <CountryInput onSubmit={(v) => setCountry(v)} />
-          <Routes
-            tracks={props.tracks}
-            artists={props.artists}
-            country={country}
-          />
-        </div>
-      </Provider>
+      <div className="w-50 mx-auto mt-3 text-center">
+        <CountryInput onSubmit={v => setCountry(v)} />
+        <Routes
+          tracks={props.tracks}
+          artists={props.artists}
+          country={country}
+        />
+      </div>
     </>
   );
 }

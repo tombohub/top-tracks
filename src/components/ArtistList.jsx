@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import { Context } from "../Context";
 
-function ArtistList(props) {
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const API_ROOT = process.env.REACT_APP_API_ROOT;
+function ArtistList({ country }) {
+  const context = useContext(Context);
 
-  return <div>{props.country}</div>;
+  //////////////////////////// Return //////////////////////////
+  return (
+    <div>
+      <ul>
+        {context.artists &&
+          context.artists.map((artist, i) => (
+            <li key={i} className="item">
+              {artist.name}
+            </li>
+          ))}
+      </ul>
+    </div>
+  );
 }
 
 export default ArtistList;

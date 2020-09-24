@@ -1,9 +1,8 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/NavBar";
-import CountryInput from "./components/CountryInput";
 import Main from "./components/Main";
+import { Provider } from "./Context";
 
 function App() {
   /* --------------------------------- Routes --------------------------------- */
@@ -13,8 +12,10 @@ function App() {
 
   return (
     <>
-      <NavBar tracks={tracks} artists={artists} />
-      <Main tracks={tracks} artists={artists} />
+      <Provider>
+        <NavBar tracks={tracks} artists={artists} />
+        <Main tracks={tracks} artists={artists} />
+      </Provider>
     </>
   );
 }

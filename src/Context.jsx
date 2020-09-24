@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import React, { createContext, useState } from "react";
 
 export const Context = createContext();
@@ -10,7 +9,14 @@ export function Provider({ children }) {
 
   return (
     <Context.Provider
-      value={{ tracks, artists, country, setTracks, setArtists, setCountry }}
+      value={{
+        tracks,
+        artists,
+        country,
+        setTracks,
+        setArtists,
+        setCountry,
+      }}
     >
       {children}
     </Context.Provider>
