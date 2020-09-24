@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { countries } from "./countries";
+import { Context } from "../Context";
 
 /**
  * Input field to choose the country
@@ -7,6 +8,7 @@ import { countries } from "./countries";
 function CountryInput(props) {
   const [countrySuggestions, setCountrySuggestions] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const context = useContext(Context);
 
   /* -------------------------------- Functions ------------------------------- */
   /**
