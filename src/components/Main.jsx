@@ -27,7 +27,7 @@ function Main(props) {
 
   return (
     <>
-      <div className="w-50 mx-auto mt-3 text-center">
+      <div className="mx-auto mt-3 text-center">
         <CountryInput onSubmit={v => setCountry(v)} />
         <Routes
           tracks={props.tracks}

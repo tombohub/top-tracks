@@ -1,21 +1,12 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Context } from "../Context";
+import List from "./List";
 
 function ArtistList({ country }) {
   const context = useContext(Context);
 
-  //////////////////////////// Return //////////////////////////
   return (
-    <div>
-      <ul>
-        {context.artists &&
-          context.artists.map((artist, i) => (
-            <li key={i} className="item">
-              {artist.name}
-            </li>
-          ))}
-      </ul>
-    </div>
+    <List data={context.artists} country={country} type="artist" />
   );
 }
 

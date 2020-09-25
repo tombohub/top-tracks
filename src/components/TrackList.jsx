@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../Context";
+import List from "./List";
 
 /**
  *List all the top tracks in selected country
@@ -9,17 +10,7 @@ function TrackList({ country }) {
   const context = useContext(Context);
 
   return (
-    <div>
-      Top 7 in {country}:
-      <ul>
-        {context.tracks &&
-          context.tracks.map((track, i) => (
-            <li key={i} className="item">
-              {track.name}
-            </li>
-          ))}
-      </ul>
-    </div>
+    <List data={context.tracks} country={country} type="track" />
   );
 }
 

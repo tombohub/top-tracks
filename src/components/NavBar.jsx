@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./navbar.css";
 
 function NavBar(props) {
   /* -------------------------------------------------------------------------- */
@@ -7,17 +8,25 @@ function NavBar(props) {
   /* -------------------------------------------------------------------------- */
   return (
     <React.Fragment>
-      <nav className="navbar justify-content-center">
-        <ul className="nav w-100">
+      <nav className="navbar  justify-content-center">
+        <ul className="navbar-nav w-100">
           <li className="nav-item border-bottom w-100 text-center">
-            <Link className="nav-link w-100" to={props.tracks}>
+            <NavLink
+              className="nav-link w-100"
+              activeClassName="active"
+              to={props.tracks}
+            >
               Tracks
-            </Link>
+            </NavLink>
           </li>
           <li className="nav-item w-100 text-center">
-            <Link className="nav-link w-100" to={props.artists}>
+            <NavLink
+              className="nav-link w-100"
+              activeClassName="active"
+              to={props.artists}
+            >
               Artists
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

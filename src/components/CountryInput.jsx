@@ -21,7 +21,9 @@ function CountryInput(props) {
 
     if (subString !== "") {
       const regex = new RegExp(`^${subString}`, "i");
-      const suggestions = countries.filter((country) => regex.test(country));
+      const suggestions = countries.filter(country =>
+        regex.test(country)
+      );
       setCountrySuggestions(suggestions);
     } else {
       setCountrySuggestions([]);
@@ -39,7 +41,7 @@ function CountryInput(props) {
             type="submit"
             key={i}
             className="btn btn-secondary"
-            onClick={(e) => handleSubmit(e, country)}
+            onClick={e => handleSubmit(e, country)}
           >
             {country}
           </button>
@@ -70,7 +72,7 @@ function CountryInput(props) {
       <p className="lead">List most popular:</p>
       <form
         action=""
-        onSubmit={(e) => handleSubmit(e, inputValue)}
+        onSubmit={e => handleSubmit(e, inputValue)}
         autoComplete="off"
       >
         <input
@@ -79,7 +81,7 @@ function CountryInput(props) {
           id="country"
           type="text"
           placeholder="Country"
-          className="form-control"
+          className="form-control w-75 mx-auto"
         />
         <div>{renderSuggestions()}</div>
       </form>
