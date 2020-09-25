@@ -6,7 +6,7 @@ import React, {
 } from "react";
 import Routes from "./Routes";
 import CountryInput from "./CountryInput";
-import { Provider, Context } from "../Context";
+import { Context } from "../Context";
 import fetch from "./fetch";
 
 /**
