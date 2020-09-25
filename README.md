@@ -7,3 +7,4 @@ Check out here [Top tracks and artists](https://tombohub.github.io/top-tracks/)
 ## Technologies used:
 
 - React
+- Bootstrap material desing
