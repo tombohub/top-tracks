@@ -10,7 +10,7 @@ function List(props) {
   return (
     <div>
       {props.country !== "" && (
-        <p>
+        <p className="lead">
           Top 7 {props.type} in {props.country}
         </p>
       )}
