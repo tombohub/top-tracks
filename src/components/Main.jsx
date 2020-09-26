@@ -8,6 +8,7 @@ import Routes from "./Routes";
 import CountryInput from "./CountryInput";
 import { Context } from "../Context";
 import fetch from "./fetch";
+import firebaseFetch from "./firebaseFetch";
 
 /**
  *Component which holds the input field and list (tracks or artists)
@@ -21,10 +22,14 @@ function Main(props) {
   console.log("conteeeeeeext:", context);
 
   useEffect(() => {
-    fetch(country, countryRef.current, context);
+    firebaseFetch(country, countryRef.current, context);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [country]);
 
+  // useEffect(() => {
+  //   fetch(country, countryRef.current, context);
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [country]);
   return (
     <>
       <div className="mx-auto mt-3 text-center">

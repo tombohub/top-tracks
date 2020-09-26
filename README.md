@@ -8,3 +8,4 @@ Check out here [Top tracks and artists](https://tombohub.github.io/top-tracks/)
 
 - React
 - Bootstrap material desing
+- Firebase functions
