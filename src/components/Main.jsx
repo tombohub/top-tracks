@@ -19,7 +19,7 @@ function Main(props) {
   const countryRef = useRef(country);
   const context = useContext(Context);
 
-  console.log("conteeeeeeext:", context);
+
 
   useEffect(() => {
     firebaseFetch(country, countryRef.current, context);

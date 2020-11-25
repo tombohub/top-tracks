@@ -1,13 +1,18 @@
 import React, { useContext, useState } from "react";
 import { countries } from "./countries";
 import { Context } from "../Context";
+import { useHistory } from "react-router-dom";
 
 /**
  * Input field to choose the country
+ * Props passed from Main
  */
 function CountryInput(props) {
   const [countrySuggestions, setCountrySuggestions] = useState([]);
   const [inputValue, setInputValue] = useState("");
+
+  // using for redirect after country input
+  const history = useHistory();
   const context = useContext(Context);
 
   /* -------------------------------- Functions ------------------------------- */
@@ -52,6 +57,7 @@ function CountryInput(props) {
 
   /**
    * Submits the form, clears the input field and lifts the country to parent Component (Main)
+   * redirects to /tracks
    * @param {event} e submit form event
    */
   function handleSubmit(e, country) {
@@ -61,6 +67,7 @@ function CountryInput(props) {
       setInputValue("");
       setCountrySuggestions([]);
       props.onSubmit(country);
+      history.push("/tracks");
     } else {
       alert(`No ${country}  country yet!`);
     }

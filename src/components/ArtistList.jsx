@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Context } from "../Context";
 import List from "./List";
 
+/**
+ * Container for Artist list
+ */
 function ArtistList({ country }) {
   const context = useContext(Context);
 

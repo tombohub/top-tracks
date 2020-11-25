@@ -1,5 +1,8 @@
 import React, { createContext, useState } from "react";
 
+/**
+ * Used in: ArtistList
+ */
 export const Context = createContext();
 
 export function Provider({ children }) {
