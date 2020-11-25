@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/top-tracks/static/css/main.c3402c40.chunk.css",
-    "main.js": "/top-tracks/static/js/main.54870c6d.chunk.js",
-    "main.js.map": "/top-tracks/static/js/main.54870c6d.chunk.js.map",
+    "main.js": "/top-tracks/static/js/main.87fd56e2.chunk.js",
+    "main.js.map": "/top-tracks/static/js/main.87fd56e2.chunk.js.map",
     "runtime-main.js": "/top-tracks/static/js/runtime-main.71ac6bb1.js",
     "runtime-main.js.map": "/top-tracks/static/js/runtime-main.71ac6bb1.js.map",
-    "static/js/2.cae42eef.chunk.js": "/top-tracks/static/js/2.cae42eef.chunk.js",
-    "static/js/2.cae42eef.chunk.js.map": "/top-tracks/static/js/2.cae42eef.chunk.js.map",
+    "static/js/2.08576bf3.chunk.js": "/top-tracks/static/js/2.08576bf3.chunk.js",
+    "static/js/2.08576bf3.chunk.js.map": "/top-tracks/static/js/2.08576bf3.chunk.js.map",
     "index.html": "/top-tracks/index.html",
-    "precache-manifest.fa9ed4cd629470b74aa0117ddd980f4f.js": "/top-tracks/precache-manifest.fa9ed4cd629470b74aa0117ddd980f4f.js",
+    "precache-manifest.23715a75f2a36b05365a8d478310fdde.js": "/top-tracks/precache-manifest.23715a75f2a36b05365a8d478310fdde.js",
     "service-worker.js": "/top-tracks/service-worker.js",
     "static/css/main.c3402c40.chunk.css.map": "/top-tracks/static/css/main.c3402c40.chunk.css.map",
-    "static/js/2.cae42eef.chunk.js.LICENSE.txt": "/top-tracks/static/js/2.cae42eef.chunk.js.LICENSE.txt"
+    "static/js/2.08576bf3.chunk.js.LICENSE.txt": "/top-tracks/static/js/2.08576bf3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.71ac6bb1.js",
-    "static/js/2.cae42eef.chunk.js",
+    "static/js/2.08576bf3.chunk.js",
     "static/css/main.c3402c40.chunk.css",
-    "static/js/main.54870c6d.chunk.js"
+    "static/js/main.87fd56e2.chunk.js"
   ]
 }
